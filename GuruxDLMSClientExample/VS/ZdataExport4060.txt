@@ -1,0 +1,18 @@
+
+Zahajeni prenosu: Tue May 26 10:35:22 2020
+Port: 4060
+Nepodarilo se navazat spojeni
+Ukonceni prenosu: Tue May 26 10:35:24 2020
+
+
+Zahajeni prenosu: Tue May 26 10:35:49 2020
+Port: 4060
+Nepodarilo se navazat spojeni
+Ukonceni prenosu: Tue May 26 10:35:51 2020
+
+
+Zahajeni prenosu: Tue May 26 10:36:09 2020
+Port: 4060
+Nepodarilo se navazat spojeni
+Ukonceni prenosu: Tue May 26 10:36:11 2020
+
