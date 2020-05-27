@@ -375,7 +375,8 @@ int main(int argc, char* argv[])
 						getchar();
 						exit(1);
 					}
-
+					spatneSpojeni = 0;
+					chybaBehemCteni = 0;
 					spojeniCelkem++;
 					printf("\n\n");
 					std::time_t result = std::time(nullptr);
@@ -539,7 +540,7 @@ int main(int argc, char* argv[])
 							}
 						}
 						else {
-							if (spatneSpojeni == 0) {
+							if (spatneSpojeni == 0) {	//pokud dojde k chybe po pripojeni a pred GetAsscociationView
 
 								printf("Chyba behem cteni.\r\n");
 								fprintf(file, "Chyba behem cteni]\n");
@@ -580,7 +581,7 @@ int main(int argc, char* argv[])
 		OBISNeuspech = OBIScelkem - OBISuspech;
 		if (OBIScelkem != 0) {
 
-			chybovost = 1 - (OBISuspech / OBIScelkem);
+			chybovost = (1 - (OBISuspech / OBIScelkem))*100;
 		}
 		
 		fprintf(logFile, "Celkovy pocet spojeni: %d\n", spojeniCelkem);

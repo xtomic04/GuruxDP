@@ -483,7 +483,540 @@ void AddElectricityID10(CGXDLMSObjectCollection& items, unsigned long sn)
 	items.push_back(d);
 }
 
+                                                                                                        ////////////////////////////////////////////////////////
+void AddElectricityID11(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.96.1.1.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
 
+}
+
+void AddElectricityID12(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.96.13.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID13(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.96.13.1.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID14(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.96.3.10.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID15(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.1.96.3.10.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID16(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.2.96.3.10.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID17(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.96.14.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID18(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.96.3.10.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID19(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID20(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID21(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.8.139.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID22(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.3.8.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID23(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.3.8.1.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID24(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.3.8.2.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID25(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.3.8.3.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID26(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.3.8.4.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID27(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.4.8.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID28(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.4.8.1.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID29(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.4.8.2.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID30(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.4.8.3.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID31(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.4.8.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID32(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID33(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.21.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID34(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.41.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID35(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.61.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID36(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID37(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.22.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID38(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.42.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID39(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.62.7.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID40(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.0.2.2.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID41(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("0.0.13.0.1.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID42(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.6.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID43(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.6.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID44(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.8.8.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID45(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.7.8.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID46(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.6.8.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID47(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.5.8.0.255");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID48(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.130");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID49(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.133");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID50(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.166");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID51(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.200");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID52(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.131");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID53(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.134");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID54(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.167");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID55(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.1.7.0.201");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID56(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.130");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID57(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.133");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID58(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.166");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID59(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.200");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID60(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.131");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID61(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.134");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID62(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.167");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+void AddElectricityID63(CGXDLMSObjectCollection& items, unsigned long sn)
+{
+    CGXDLMSVariant id02(sn);
+    CGXDLMSData* d = new CGXDLMSData("1.0.2.7.0.201");
+    d->SetValue(id02);
+    d->GetAttributes().push_back(CGXDLMSAttribute(2, DLMS_DATA_TYPE_UINT32));
+    items.push_back(d);
+
+}
+
+
+
+                                                                                                        ///////////////////////////////////////////////////////
 /*
 * Add Auto connect object.
 */
@@ -702,6 +1235,61 @@ int CGXDLMSBase::Init(int port, GX_TRACE_LEVEL trace)
 	AddElectricityID08(GetItems(), volt);
 	AddElectricityID09(GetItems(), volt);
 	AddElectricityID10(GetItems(), volt);
+
+    AddElectricityID11(GetItems(), volt);
+    AddElectricityID12(GetItems(), volt);
+    AddElectricityID13(GetItems(), volt);
+    AddElectricityID14(GetItems(), volt);
+    AddElectricityID15(GetItems(), volt);
+    AddElectricityID16(GetItems(), volt);
+    AddElectricityID17(GetItems(), volt);
+    AddElectricityID18(GetItems(), volt);
+    AddElectricityID19(GetItems(), volt);
+    AddElectricityID20(GetItems(), volt);
+    AddElectricityID21(GetItems(), volt);
+    AddElectricityID22(GetItems(), volt);
+    AddElectricityID23(GetItems(), volt);
+    AddElectricityID24(GetItems(), volt);
+    AddElectricityID25(GetItems(), volt);
+    AddElectricityID26(GetItems(), volt);
+    AddElectricityID27(GetItems(), volt);
+    AddElectricityID28(GetItems(), volt);
+    AddElectricityID29(GetItems(), volt);
+    AddElectricityID30(GetItems(), volt);
+    AddElectricityID31(GetItems(), volt);
+    AddElectricityID32(GetItems(), volt);
+    AddElectricityID33(GetItems(), volt);
+    AddElectricityID34(GetItems(), volt);
+    AddElectricityID35(GetItems(), volt);
+    AddElectricityID36(GetItems(), volt);
+    AddElectricityID37(GetItems(), volt);
+    AddElectricityID38(GetItems(), volt);
+    AddElectricityID39(GetItems(), volt);
+    AddElectricityID40(GetItems(), volt);
+    AddElectricityID41(GetItems(), volt);
+    AddElectricityID42(GetItems(), volt);
+    AddElectricityID43(GetItems(), volt);
+    AddElectricityID44(GetItems(), volt);
+    AddElectricityID45(GetItems(), volt);
+    AddElectricityID46(GetItems(), volt);
+    AddElectricityID47(GetItems(), volt);
+    AddElectricityID48(GetItems(), volt);
+    AddElectricityID49(GetItems(), volt);
+    AddElectricityID50(GetItems(), volt);
+    AddElectricityID51(GetItems(), volt);
+    AddElectricityID52(GetItems(), volt);
+    AddElectricityID53(GetItems(), volt);
+    AddElectricityID54(GetItems(), volt);
+    AddElectricityID55(GetItems(), volt);
+    AddElectricityID56(GetItems(), volt);
+    AddElectricityID57(GetItems(), volt);
+    AddElectricityID58(GetItems(), volt);
+    AddElectricityID59(GetItems(), volt);
+    AddElectricityID60(GetItems(), volt);
+    AddElectricityID61(GetItems(), volt);
+    AddElectricityID62(GetItems(), volt);
+    AddElectricityID63(GetItems(), volt);
+
 
     //Add Last avarage.
     CGXDLMSRegister* pRegister = new CGXDLMSRegister("1.1.21.25.0.255");
