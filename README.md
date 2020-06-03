@@ -11,7 +11,9 @@ Po zkompilování projektu **GuruxDLMSServerExample** vznikne ve složce **Gurux
  FOR /L %%i IN (4060,1,4061) DO (
 
  start GuruxDLMSServerExample.exe.lnk -p %%i
+ 
  timeout 1
+ 
  )
 
  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
@@ -27,8 +29,11 @@ Pro spuštění více serveru lze použít dávkové soubory (.bat)
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
  FOR /L %%i IN (4060,1,4061) DO (
+ 
  start /B pripojeni.bat %%i
+ 
  timeout 1
+ 
  )
 
  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
