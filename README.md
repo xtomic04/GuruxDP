@@ -28,16 +28,34 @@ Then run make. gurux_dlms_cpp static library is made.
 For Client example you should also create bin and obj -directories.
 Change Host name, port and DLMS settings for example. Run make and you are ready to test.
 
-Simple example
-=========================== 
-Before use you must set following device parameters. 
-Parameters are manufacturer spesific.
 
 
-```C++
+Server
+Windows
+Po zkompilování projektu GuruxDLMSServerExample vznikne ve složce GuruxDLMSServerExample\VS\Debug soubor GuruxDLMSServerExample.exe, který je spustitelný. Při spuštění tohoto souboru, server běží ve výchozím nastavení na portu 4060. Server lze spustit i z příkazového řádku se vstupním parametrem -p, kterým se nastavuje číslo portu, na kterém server poběží. Pro spuštění serveru z příkazového řádku je nutné vytvořit ze souboru GuruxDLMSServerExample.exe zástupce a ten následně spustit. Pro spuštění více serverů je možné použít dávkový soubor (.bat)
+serverLoop.bat
+____________________________________________________
+FOR /L %%i IN (4060,1,4061) DO (
+    
+	start GuruxDLMSServerExample.exe.lnk -p %%i
+	timeout 1
+)
+____________________________________________________
+RaspberryPi (linux)
+Ve složce Development je třeba vytvořit složky bin a obj. Následně ve složce Development příkazem make provézt kompilaci. Dále ve složce GuruxDLMSServerExample je třeba vytvořit složky bin a obj a příkazem make se provede kompilace projektu. Ve složce bin se vytvoří soubor gurux.dlms.server.bin. Ten lze spustit také se vstupním parametrem -p. Příklad spuštění serveru: ./gurux.dlms.server.bin -p 4060. 
+Pro spuštění více serveru lze použít dávkové soubory (.bat) 
+serverLoopPi.bat
+____________________________________________________
+FOR /L %%i IN (4060,1,4061) DO (  
+	start /B pripojeni.bat %%i
+	timeout 1
+)
+____________________________________________________
+pripojeni.bat
+____________________________________________________
+plink -batch -ssh pi@192.168.10.208 -pw raspberry cd /home/guruxServer/GURUX/GuruxDLMSServerExample/bin/; ./gurux.dlms.server.bin -p %1
+____________________________________________________
+Soubor serverLoopPi.bat je spustitelný. V souboru pripojeni.bat je třeba nastavit ip adresu RaspberryPi, dále uživatelské jméno a heslo (výchozí nastavení: pi/raspberry). Pro využití těchto dávkových soubor, je nutno mít na PC program plink (který je součástí instalace programu Putty).
+Klient
+Po kompilaci projektu GuruxDLMSClientExample vznikne ve složce GuruxDLMSClientExample\VS\Debug soubor GuruxDLMSClientExample.exe, který je spustitelný z příkazového řádku. Povinným vstupním parametrem (-h) je ip adresa serveru. Příklad spuštění: GuruxDLMSClientExample.exe -h 192.168.10.208
 
-All default parameters are given in constructor.
-// Is used Logican Name or Short Name referencing.
-CGXDLMSClient client(true);
-
-```
