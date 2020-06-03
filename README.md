@@ -20,7 +20,7 @@ Ve složce **Development** je třeba vytvořit složky **bin** a **obj.** Násle
 Pro spuštění více serveru lze použít dávkové soubory (.bat)
 
 **serverLoopPi.bat**
- \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
  FOR /L %%i IN (4060,1,4061) DO (
  start /B pripojeni.bat %%i
  timeout 1
