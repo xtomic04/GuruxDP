@@ -5,12 +5,15 @@
 Po zkompilování projektu **GuruxDLMSServerExample** vznikne ve složce **GuruxDLMSServerExample\VS\Debug** soubor **GuruxDLMSServerExample.exe,** který je spustitelný. Při spuštění tohoto souboru, server běží ve výchozím nastavení na portu 4060. Server lze spustit i z příkazového řádku se vstupním parametrem **-p,** kterým se nastavuje číslo portu, na kterém server poběží. Pro spuštění serveru z příkazového řádku je nutné vytvořit ze souboru **GuruxDLMSServerExample.exe** zástupce a ten následně spustit. Pro spuštění více serverů je možné použít dávkový soubor (.bat)
 
 **serverLoop.bat**
+ 
  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
  FOR /L %%i IN (4060,1,4061) DO (
 
  start GuruxDLMSServerExample.exe.lnk -p %%i
  timeout 1
  )
+
  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## RaspberryPi (linux)
@@ -20,17 +23,22 @@ Ve složce **Development** je třeba vytvořit složky **bin** a **obj.** Násle
 Pro spuštění více serveru lze použít dávkové soubory (.bat)
 
 **serverLoopPi.bat**
+
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
  FOR /L %%i IN (4060,1,4061) DO (
  start /B pripojeni.bat %%i
  timeout 1
  )
+
  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **pripojeni.bat**
+
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 plink -batch -ssh pi@192.168.10.208 -pw raspberry cd /home/guruxServer/GURUX/GuruxDLMSServerExample/bin/; ./gurux.dlms.server.bin -p %1
+
  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Soubor **serverLoopPi.bat** je spustitelný. V souboru **pripojeni.bat** je třeba nastavit ip adresu RaspberryPi, dále uživatelské jméno a heslo (výchozí nastavení: pi/raspberry). Pro využití těchto dávkových soubor, je nutno mít na PC program **plink** (který je součástí instalace programu **Putty** ).
