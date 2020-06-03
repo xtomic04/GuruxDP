@@ -571,7 +571,7 @@ int main(int argc, char* argv[])
 				//std::cout << asctime(localtime(&start));
 				//std::cout << difftime(stop, start);
 				time_t stop = time(0);
-				if (difftime(stop, start) > testDuration)
+				if (difftime(stop, start) > testDuration*60)
 					break;
 				Sleep(timeSchedule * 1000);
 
