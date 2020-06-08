@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\GuruxDLMSClientExample",
-    "\\GuruxDLMSClientExample\\src"
+    "\\GuruxDLMSClientExample\\src",
+    "\\GuruxDLMSClientExample\\VS"
   ],
-  "SelectedNode": "\\GuruxDLMSClientExample\\src\\GuruxDLMSClientExample.cpp",
+  "SelectedNode": "\\GuruxDLMSClientExample\\VS\\GuruxDLMSClientExample.vcxproj",
   "PreviewInSolutionExplorer": false
 }

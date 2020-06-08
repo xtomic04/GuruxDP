@@ -2076,7 +2076,7 @@ void CGXDLMSBase::Connected(
     {
         FILE* file;
         char buf[0x100];
-        snprintf(buf, sizeof(buf), "dataExport%d.txt", Pport);
+        snprintf(buf, sizeof(buf), "logs/dataExport%d.txt", Pport);
         file = fopen(buf, "a");
 
 
@@ -2115,7 +2115,7 @@ void CGXDLMSBase::Disconnected(
     {
         FILE* file;
         char buf[0x100];
-        snprintf(buf, sizeof(buf), "dataExport%d.txt", Pport);
+        snprintf(buf, sizeof(buf), "logs/dataExport%d.txt", Pport);
         file = fopen(buf, "a");
 
         printf("Disconnected.\r\n");
