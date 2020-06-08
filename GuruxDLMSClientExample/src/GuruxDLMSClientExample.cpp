@@ -41,7 +41,6 @@
 #include "../../development/include/GXDLMSTcpUdpSetup.h"
 
 
-
 static void ShowHelp()
 {
 	printf("GuruxDlmsSample reads data from the DLMS/COSEM device.\r\n");
@@ -85,7 +84,7 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 #endif
-		int ret, ret2, scenario, timeSchedule;
+		int ret, ret2;
 		//Remove trace file if exists.
 		remove("trace.txt");
 		remove("LogFile.txt");
@@ -104,7 +103,23 @@ int main(int argc, char* argv[])
 		char* address = "localhost";
 		char* serialPort = NULL;
 		bool iec = false;
-		while ((opt = getopt(argc, argv, "h:p:c:s:r:it:a:wP:g:S:n:gn:")) != -1)
+/*GURUX*/
+/*Tomiczek*/
+		//--------------------------------------------------variable setup-------------------------//tomiczek
+		int numberOfServers=NULL, testDuration=NULL, scenario=NULL, timeSchedule = NULL;
+		int i, lost = 0, spojeniCelkem = 0, chybaBehemCteni = 0, spatneSpojeni = 0;
+		float chybovost = 100, OBIScelkem = 0, OBISuspech = 0, OBISscenar = 0, OBISNeuspech = 0;
+		std::string OBIS;
+		FILE* file;
+		FILE* logFile;
+		char buf[0x100];
+		CGXByteBuffer tmp;
+		std::string newOBISCode;
+		//--------------------------------------------------variable setup end-------------------------
+
+		
+/*GURUX*/
+		while ((opt = getopt(argc, argv, "h:p:c:s:r:it:a:wP:g:S:n:gn:N:D:T:C:")) != -1)
 		{
 			switch (opt)
 			{
@@ -229,7 +244,19 @@ int main(int argc, char* argv[])
 			case 'n':
 				serverAddress = CGXDLMSClient::GetServerAddress(atoi(optarg));
 				break;
-			case '?':
+/*Tomiczek*/case 'N':
+				numberOfServers = atoi(optarg);
+				break;
+			case 'D':
+				testDuration = atoi(optarg);
+				break;
+			case 'T':
+				timeSchedule = atoi(optarg);
+				break;
+			case 'C':
+				scenario = atoi(optarg);
+				break;
+/*GURUX*/	case '?':
 			{
 				if (optarg[0] == 'c') {
 					printf("Missing mandatory client option.\n");
@@ -268,43 +295,43 @@ int main(int argc, char* argv[])
 			}
 		}
 
-		//--------------------------------------------------ProgramStarts----------------------------------------
-		int numberOfServers, testDuration = 60;
-		int i, lost = 0, spojeniCelkem = 0, chybaBehemCteni = 0, spatneSpojeni = 0;
-		float chybovost = 100, OBIScelkem = 0, OBISuspech = 0, OBISscenar = 0, OBISNeuspech = 0;
-		std::string OBIS;
-		FILE* file;
-		FILE* logFile;
-		char buf[0x100];
-		CGXByteBuffer tmp;
-		std::string newOBISCode;
-
-
-		printf("\nZadej pocet serveru:\n");
-		scanf_s("%d", &numberOfServers);
-
-		numberOfServers = numberOfServers + port;
-
-		printf("Zadej delku trvani testu (minuty)\n");
-		scanf_s("%d", &testDuration);
-
-		printf("Zadej rozmezi zasilani dotazu (sekundy)\n");
-		scanf_s("%d", &timeSchedule);
-
-		printf("Zadej scenar\n\n");
-		printf("1: scenar pro cteni jednoho OBIS kodu (1)\n");
-		printf("2: scenar pro cteni jednoho OBIS kodu vice hodnot (1)\n");
-		printf("3: scenar pro cteni OBIS kodu napeti (10) \n");
-		printf("4: scenar pro nacteni 64 OBIS kodu (64)\n");
-		printf("5: precteni vsech obis kodu\n\n");
 		
-		do {
-			scanf_s("%d", &scenario);
-			if (scenario < 1 || scenario > 5)
-			{
-				printf("Neplatna volba.\n");
-			}
-		} while (scenario < 1 || scenario > 5);
+/*Tomiczek*/
+		//--------------------------------------------------ProgramStarts----------------------------------------
+		
+		if (numberOfServers == NULL)
+		{
+			printf("\nZadej pocet serveru:\n");
+			scanf_s("%d", &numberOfServers);
+		}
+		numberOfServers = numberOfServers + port;
+		if (testDuration == NULL)
+		{
+			printf("Zadej delku trvani testu (minuty)\n");
+			scanf_s("%d", &testDuration);
+		}
+		if (timeSchedule == NULL)
+		{
+			printf("Zadej rozmezi zasilani dotazu (sekundy)\n");
+			scanf_s("%d", &timeSchedule);
+		}
+		if (scenario == NULL || scenario < 1 || scenario > 5)
+		{
+			printf("Zadej scenar\n\n");
+			printf("1: scenar pro cteni jednoho OBIS kodu (1)\n");
+			printf("2: scenar pro cteni jednoho OBIS kodu vice hodnot (1)\n");
+			printf("3: scenar pro cteni OBIS kodu napeti (10) \n");
+			printf("4: scenar pro nacteni 64 OBIS kodu (64)\n");
+			printf("5: precteni vsech obis kodu\n\n");
+
+			do {
+				scanf_s("%d", &scenario);
+				if (scenario < 1 || scenario > 5)
+				{
+					printf("Neplatna volba.\n");
+				}
+			} while (scenario < 1 || scenario > 5);
+		}
 
 		time_t start = time(0);
 		std::cout << asctime(localtime(&start));
@@ -332,7 +359,7 @@ int main(int argc, char* argv[])
 				break;
 		}
 		if ((scenario != 2) && (scenario != 5)) {
-			//Get (read) selected objects.
+/*GURUX*/	//Get (read) selected objects.
 			p = obisCodes;
 			do
 			{
@@ -352,8 +379,8 @@ int main(int argc, char* argv[])
 			} while ((p = strchr(p, ',')) != NULL);
 			readObjects = obisCodes;
 		}
-
-		logFile = fopen("SuperLog.txt", "a");
+/*Tomiczek*/
+		logFile = fopen("logs/SuperLog.txt", "a");
 		if (logFile == NULL)
 		{
 			printf("\nSoubor se nepovedlo otevrit\n");
@@ -367,7 +394,7 @@ int main(int argc, char* argv[])
 				//smycka pro pripojeni k nekolika serverum
 				for (port = 4060; port < numberOfServers; port++) {
 					//vytvoreni souboru pro logovani
-					snprintf(buf, sizeof(buf), "dataExport%d.txt", port);
+					snprintf(buf, sizeof(buf), "logs/dataExport%d.txt", port);
 					file = fopen(buf, "a");
 					if (file == NULL)
 					{
@@ -395,8 +422,8 @@ int main(int argc, char* argv[])
 					fprintf(logFile, "\nZahajeni prenosu: %s", std::asctime(std::localtime(&result)));
 					fprintf(file, "Port: %d\n", port);
 					fprintf(logFile, "Port: %d\n", port);
-					CGXDLMSSecureClient cl(useLogicalNameReferencing, clientAddress, serverAddress, authentication, password, interfaceType);
-					//Sifrovani prenosu
+/*GURUX*/			CGXDLMSSecureClient cl(useLogicalNameReferencing, clientAddress, serverAddress, authentication, password, interfaceType);
+/*Tomiczek*/		//Sifrovani prenosu
 					/*
 					cl.GetCiphering()->SetSecurity(DLMS_SECURITY_ENCRYPTION);
 					//std::string hex = "142434445464748";
@@ -410,7 +437,7 @@ int main(int argc, char* argv[])
 					GXHelpers::HexToBytes(hex, tmp);
 					cl.GetCiphering()->SetAuthenticationKey(tmp);
 					*/
-					CGXCommunication comm(&cl, 5000, trace);
+/*GURUX*/			CGXCommunication comm(&cl, 5000, trace);
 
 
 
@@ -431,7 +458,7 @@ int main(int argc, char* argv[])
 						if ((ret = comm.Connect(address, port)) != 0)									//Pripojeni
 						{
 							printf("Connect failed %s.\r\n", CGXDLMSConverter::GetErrorMessage(ret));
-							printf("Nepodarilo se navazat spojeni.\r\n");
+/*Tomiczek*/				printf("Nepodarilo se navazat spojeni.\r\n");
 							lost++;
 							spatneSpojeni = 1;
 							fprintf(file, "Nepodarilo se navazat spojeni\n");
@@ -440,12 +467,12 @@ int main(int argc, char* argv[])
 							goto KONEC;
 						}
 					}
-					else
+/*GURUX*/			else
 					{
 						printf("Missing mandatory connection information for TCP/IP or serial port connection.\n");
 						return 1;
 					}
-					OBIScelkem = OBIScelkem + OBISscenar;
+/*Tomiczek*/		OBIScelkem = OBIScelkem + OBISscenar;
 					//Vypis vsech obis kodu
 					if (scenario == 5) {
 						ret = comm.ReadAll();
@@ -463,14 +490,14 @@ int main(int argc, char* argv[])
 					else
 					{
 
-						if ((ret = comm.InitializeConnection()) == 0 && (ret = comm.GetAssociationView()) == 0)
+/*GURUX*/				if ((ret = comm.InitializeConnection()) == 0 && (ret = comm.GetAssociationView()) == 0)
 						{
-							if (scenario == 2) {
+/*Tomiczek*/				if (scenario == 2) {
 								CGXDLMSObject* obj = cl.GetObjects().FindByLN(DLMS_OBJECT_TYPE_ALL, newOBISCode);
 								ret = comm.GetObjectWithoutIndex(obj);
 								OBISuspech++;
 							}
-							else {
+/*GURUX*/					else {
 								std::string str;
 								std::string value;
 								char buff[200];
@@ -490,26 +517,27 @@ int main(int argc, char* argv[])
 									sscanf(p2, "%d", &index);
 #endif
 									str.append(p, p2 - p);
-									OBIS = str;
+/*Tomiczek*/						OBIS = str;
 									std::cout << "\n\nOBIS kod: " << OBIS << "\n";
 									fprintf(file, "OBIS kod: %s\n", OBIS.c_str());
 									fprintf(logFile, "OBIS kod: %s\n", OBIS.c_str());
-									CGXDLMSObject* obj = cl.GetObjects().FindByLN(DLMS_OBJECT_TYPE_ALL, str);
+/*GURUX*/							CGXDLMSObject* obj = cl.GetObjects().FindByLN(DLMS_OBJECT_TYPE_ALL, str);
 									value.clear();
-									if (obj == NULL)
+/*Tomiczek*/						if (obj == NULL)
 									{
 										printf("OBIS neexistuje");
 										fprintf(file, "OBIS neexistuje\n");
 										fprintf(logFile, "OBIS neexistuje\n");
 									}
 									else {
-										if ((ret = comm.Read(obj, index, value)) != DLMS_ERROR_CODE_OK)
+/*GURUX*/								if ((ret = comm.Read(obj, index, value)) != DLMS_ERROR_CODE_OK)
 										{
 #if _MSC_VER > 1000				
 
 											sprintf_s(buff, 100, "Error! Index: %d %s\r\n", index, CGXDLMSConverter::GetErrorMessage(ret));
-											fprintf(file, "Error! Index: %d %s\n", index, CGXDLMSConverter::GetErrorMessage(ret));
+/*Tomiczek*/								fprintf(file, "Error! Index: %d %s\n", index, CGXDLMSConverter::GetErrorMessage(ret));
 											fprintf(logFile, "Error! Index: %d %s\n", index, CGXDLMSConverter::GetErrorMessage(ret));
+/*GURUX*/
 #else
 											sprintf(buff, "Error! Index: %d read failed: %s\r\n", index, CGXDLMSConverter::GetErrorMessage(ret));
 #endif
@@ -521,13 +549,14 @@ int main(int argc, char* argv[])
 										else
 										{
 #if _MSC_VER > 1000
-											//vypis hodnot obis kodu
+/*Tomiczek*/								//vypis hodnot obis kodu
 											fprintf(file, "Index: %d Value: %s\n", index, value.c_str());
 											fprintf(logFile, "Index: %d Value: %s\n", index, value.c_str());
 											sprintf_s(buff, 100, "Index: %d Value: ", index);
 #else
 											sprintf(buff, "Index: %d Value: ", index);
 #endif
+/*GURUX*/
 											comm.WriteValue(trace, buff);
 											comm.WriteValue(trace, value.c_str());
 											comm.WriteValue(trace, "\r\n");
@@ -540,7 +569,7 @@ int main(int argc, char* argv[])
 							}
 						}
 						else {
-							if (spatneSpojeni == 0) {	//pokud dojde k chybe po pripojeni a pred GetAsscociationView
+/*Tomiczek*/					if (spatneSpojeni == 0) {	//pokud dojde k chybe po pripojeni a pred GetAsscociationView
 
 								printf("Chyba behem cteni.\r\n");
 								fprintf(file, "Chyba behem cteni]\n");
@@ -601,6 +630,7 @@ int main(int argc, char* argv[])
 		printf("Celkovy pocet neuspesnych navazani spojeni se serverem: %d\n\n", lost);
 
 	}
+/*GURUX*/
 #if defined(_WIN32) || defined(_WIN64)//Windows
 	WSACleanup();
 #if _MSC_VER > 1400
