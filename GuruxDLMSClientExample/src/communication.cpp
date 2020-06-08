@@ -1305,7 +1305,7 @@ int CGXCommunication::GetProfileGenericColumns()
     }
     return ret;
 }
-
+/*Tomiczek*/
 int CGXCommunication::GetObjectWithoutIndex(CGXDLMSObject* pObject)
 {
     int ret;
@@ -1340,7 +1340,7 @@ int CGXCommunication::GetObjectWithoutIndex(CGXDLMSObject* pObject)
     }
     return ret;
 }
-
+/*Tomiczek*/
 
 int CGXCommunication::GetReadOut()
 {

@@ -116,7 +116,7 @@ int Start(int port, GX_TRACE_LEVEL trace)
 	
 	//Muj SERVER
 	//Create Gurux DLMS server component for Short Name and start listen events.
-    
+ /*Tomiczek*/
 	CGXDLMSServerLN_47 LN_47Server(new CGXDLMSAssociationLogicalName(), new CGXDLMSTcpUdpSetup());
     if ((ret = LN_47Server.Init(port, trace)) != 0)
 	{

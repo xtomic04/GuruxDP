@@ -2074,6 +2074,7 @@ void CGXDLMSBase::Connected(
 {
     if (m_Trace > GX_TRACE_LEVEL_WARNING)
     {
+/*Tomiczek*/
         FILE* file;
         char buf[0x100];
         snprintf(buf, sizeof(buf), "logs/dataExport%d.txt", Pport);
@@ -2091,7 +2092,7 @@ void CGXDLMSBase::Connected(
         fprintf(file, "%s", std::asctime(std::localtime(&result)));
         fclose(file);
         printf("\r\n");
-
+/*Tomiczek*/
 
 
     }
@@ -2113,6 +2114,7 @@ void CGXDLMSBase::Disconnected(
 {
     if (m_Trace > GX_TRACE_LEVEL_WARNING)
     {
+/*Tomiczek*/
         FILE* file;
         char buf[0x100];
         snprintf(buf, sizeof(buf), "logs/dataExport%d.txt", Pport);
@@ -2129,6 +2131,7 @@ void CGXDLMSBase::Disconnected(
         fprintf(file, "%s", std::asctime(std::localtime(&result)));
         fclose(file);
         printf("\r\n");
+/*Tomiczek*/
     }
 }
 
