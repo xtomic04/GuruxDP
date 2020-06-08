@@ -52,4 +52,14 @@ Soubor **serverLoopPi.bat** je spustitelný. V souboru **pripojeni.bat** je tře
 
 Po kompilaci projektu **GuruxDLMSClientExample** vznikne ve složce **GuruxDLMSClientExample\VS\Debug** soubor **GuruxDLMSClientExample.exe,** který je spustitelný z příkazového řádku. Povinným vstupním parametrem ( **-h** )je ip adresa serveru. Příklad spuštění: **GuruxDLMSClientExample.exe -h 192.168.10.208**
 
+Klient podporuje další vstupní parametry pro nastavení testování:
+
+N – nastavení počtu serverů, na které se bude klient dotazovat
+
+D – nastavení délky testování (v minutách)
+
+T – časové rozmezí mezi dotazováním na servery (v sekundách)
+ 
+C – výběr scénáře (1-5)
+
 
