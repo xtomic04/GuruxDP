@@ -20,7 +20,7 @@ Po zkompilování projektu **GuruxDLMSServerExample** vznikne ve složce **Gurux
 
 ## RaspberryPi (linux)
 
-Ve složce **Development** je třeba vytvořit složky **bin** a **obj.** Následně ve složce **Development** příkazem **make** provézt kompilaci. Dále ve složce **GuruxDLMSServerExample** je třeba vytvořit složky **bin** a **obj** a příkazem **make** se provede kompilace projektu. Ve složce **bin** se vytvoří soubor **gurux.dlms.server.bin**. Ten lze spustit také se vstupním parametrem **-p.** Příklad spuštění serveru: **./gurux.dlms.server.bin -p 4060**.
+Ve složce **Development** je třeba vytvořit složky **bin** a **obj.** Následně ve složce **Development** příkazem **make** provézt kompilaci. Dále ve složce **GuruxDLMSServerExample** je třeba vytvořit složky **bin** a **obj** a příkazem **make** se provede kompilace projektu. Ve složce **bin** se vytvoří soubor **gurux.dlms.server.bin**. V té samé složce je nutné vytvořit adresář **logs**, kde se budou ukládat logy. Ten lze spustit také se vstupním parametrem **-p.** Příklad spuštění serveru: **./gurux.dlms.server.bin -p 4060**.
 
 Pro spuštění více serveru lze použít dávkové soubory (.bat)
 
