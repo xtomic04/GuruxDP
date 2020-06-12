@@ -2,7 +2,7 @@
 
 ## Windows
 
-Po zkompilování projektu **GuruxDLMSServerExample** vznikne ve složce **GuruxDLMSServerExample\VS\Debug** soubor **GuruxDLMSServerExample.exe,** který je spustitelný. Při spuštění tohoto souboru, server běží ve výchozím nastavení na portu 4060. Server lze spustit i z příkazového řádku se vstupním parametrem **-p,** kterým se nastavuje číslo portu, na kterém server poběží. Pro spuštění serveru z příkazového řádku je nutné vytvořit ze souboru **GuruxDLMSServerExample.exe** zástupce a ten následně spustit. Pro spuštění více serverů je možné použít dávkový soubor (.bat)
+Po zkompilování projektu **GuruxDLMSServerExample** vznikne ve složce **GuruxDLMSServerExample\VS\Debug** soubor **GuruxDLMSServerExample.exe,** který je spustitelný. V té samé složce je nutné vytvořit adresář **logs**, kde se budou ukládat logy. Při spuštění tohoto souboru, server běží ve výchozím nastavení na portu 4060. Server lze spustit i z příkazového řádku se vstupním parametrem **-p,** kterým se nastavuje číslo portu, na kterém server poběží. Pro spuštění serveru z příkazového řádku je nutné vytvořit ze souboru **GuruxDLMSServerExample.exe** zástupce a ten následně spustit. Pro spuštění více serverů je možné použít dávkový soubor (.bat)
 
 **serverLoop.bat**
  
@@ -50,7 +50,7 @@ Soubor **serverLoopPi.bat** je spustitelný. V souboru **pripojeni.bat** je tře
 
 # Klient
 
-Po kompilaci projektu **GuruxDLMSClientExample** vznikne ve složce **GuruxDLMSClientExample\VS\Debug** soubor **GuruxDLMSClientExample.exe,** který je spustitelný z příkazového řádku. Povinným vstupním parametrem ( **-h** )je ip adresa serveru. Příklad spuštění: **GuruxDLMSClientExample.exe -h 192.168.10.208**
+Po kompilaci projektu **GuruxDLMSClientExample** vznikne ve složce **GuruxDLMSClientExample\VS\Debug** soubor **GuruxDLMSClientExample.exe,** který je spustitelný z příkazového řádku. V té samé složce je nutné vytvořit adresář **logs**, kde se budou ukládat logy. Povinným vstupním parametrem ( **-h** )je ip adresa serveru. Příklad spuštění: **GuruxDLMSClientExample.exe -h 192.168.10.208**
 
 Klient podporuje další vstupní parametry pro nastavení testování:
 
@@ -61,5 +61,8 @@ D – nastavení délky testování (v minutách)
 T – časové rozmezí mezi dotazováním na servery (v sekundách)
  
 C – výběr scénáře (1-5)
+
+
+Pro práci s klientem a serverem na platformě windows je nutné zvolit vyvojové prostředí pro kompilaci zdrojového kódu. Jednou z možností je využiti vyvojového prostředí Microsoft Visual Studio.
 
 
